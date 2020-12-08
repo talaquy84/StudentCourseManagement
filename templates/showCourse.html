@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Course Portal</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style='text-align: center;'>Student Portal</h1>
+    <div class="form">
+        <form action="/" method="GET">
+            <input type="submit" value="Go home page"><br><br>
+        </form>
+        
+    </div>
+    <br>
+    <table>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Prerequisite Class</th>
+            <th>Department ID</th> 
+            <th>Section ID</th>
+            <th>Class time</th>
+            <th>Days of Week</th> 
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.Course_ID }}</td>
+                <td>{{ result.Course_Name }}</td>
+                <td>{{ result.Pre_req_course }}</td>
+                <td>{{ result.Department_ID }}</td>
+                <td>{{ result.Section_ID }}</td>
+                <td>{{ result.Class_Time }}</td>
+                <td>{{ result.Days_Of_Week }}</td>
+            </tr>
+         {% endfor %}
+    </table><br><br>
+</div>
+{% endblock %}

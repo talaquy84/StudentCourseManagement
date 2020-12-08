@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Course Portal</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style='text-align: center;'>Student Portal</h1>
+    <div class="form">
+        <div>
+            <h2>Get All Course</h2>
+            <form action="/courses" method="GET">
+                <input type="submit" value="Show All Course"><br><br>
+            </form>
+        </div>
+        <hr>
+
+        <div>
+            <h2>Get Student Course</h2>
+            <form action="/courseID{{cwid}}">
+                <label >Student CWID:</label>
+                <input type="text" id="cwid" name="cwid"><br><br>
+                <input type="submit" value="Show Course"><br><br>
+            </form>
+        </div>
+        <hr>
+
+        <div>
+            <h2>Get Specific Course</h2>
+            <form action="/course{{courseID}}{{sectionID}}{{departmentID}}">
+                <label >Course ID:</label>
+                <input type="text" id="cwid" name="courseID"><br><br>
+                <label >Section ID:</label>
+                <input type="text" id="cwid" name="sectionID"><br><br>
+                <label >Department ID:</label>
+                <input type="text" id="cwid" name="departmentID"><br><br>
+                <input type="submit" value="Show Specific Course"><br><br>
+            </form>
+        </div>
+        <hr>    
+
+        <div>  
+            <h2>Add Course</h2>
+            <form action="/addCourse{{cwid}}{{courseID}}{{sectionID}}{{departmentID}}" method="GET">
+                <label >CWID:</label>
+                <input type="text" name="cwid" id="cwid" placeholder="cwid"><br><br>
+                <label >Course Id:</label>
+                <input type="text" name="courseID" id="courseID" placeholder="courseID"><br><br>
+                <label >Section ID:</label>
+                <input type="text" name="sectionID" id="sectionID" placeholder="sectionID"><br><br>
+                <label >Department ID:</label>
+                <input type="text" name="departmentID" id="departmentID" placeholder="departmentID"> <br><br>
+                <input type="submit" value="Add Course"><br><br>
+            </form>
+        </div>
+        <hr>
+
+        <div>  
+            <h2>Drop Course</h2>
+            <form action="/dropCourse{{cwid}}{{courseID}}{{sectionID}}{{departmentID}}" method="GET">
+                <label >CWID:</label>
+                <input type="text" name="cwid" id="cwid" placeholder="cwid"><br><br>
+                <label >Course Id:</label>
+                <input type="text" name="courseID" id="courseID" placeholder="courseID"><br><br>
+                <label >Section ID:</label>
+                <input type="text" name="sectionID" id="sectionID" placeholder="sectionID"><br><br>
+                <label >Department ID:</label>
+                <input type="text" name="departmentID" id="departmentID" placeholder="departmentID"> <br><br>
+                <input type="submit" value="Drop Course"><br><br>
+            </form>
+        </div>
+    </div>
+    <br>
+</div>
+{% endblock %}
