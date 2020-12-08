@@ -15,8 +15,8 @@ app = FlaskAPI(__name__)
 def get_db():
     if 'db' not in g:
         g.db = pyodbc.connect('Driver={ODBC DRIVER 17 for SQL Server};'
-                'Server=QUY-PC;'
-                'Database=Class_Schedule;'
+                'Server=your_server;'
+                'Database=your_database;'
                 'Trusted_Connection=yes;')
     return g.db
 
